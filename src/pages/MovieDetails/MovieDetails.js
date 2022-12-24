@@ -13,7 +13,7 @@ export const BASEURL_MOVIES_DETALIS = 'https://api.themoviedb.org/3/movie/';
 export const MoviesDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [ setIsLoading] = useState(false);
 
   const location = useLocation();
   console.log('location', location.pathname);
@@ -75,8 +75,7 @@ export const MoviesDetails = () => {
         </div>
       )}
       <div>
-        <h2></h2>
-        <ul>
+              <ul>
           <li>
             <Link to="cast">Cast</Link>
           </li>
