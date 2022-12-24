@@ -52,7 +52,7 @@ export const MoviesDetails = () => {
   console.log('movie', movie);
 
   return (
-    <div className={css.contanetMoviesDetails}>
+    <div>
       <button type="button">
         <NavLink to={goBack}>Go back</NavLink>
       </button>

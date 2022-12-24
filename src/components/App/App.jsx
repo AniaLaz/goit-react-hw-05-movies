@@ -16,7 +16,12 @@ const StyledLink = styled(NavLink)`
     color: red;
   }
 `;
+const Styled = styled('div')`
+  width: 90vw;
 
+  display: block;
+  margin: auto;
+`;
 export const App = () => {
   return (
     <div>
@@ -26,17 +31,17 @@ export const App = () => {
         </StyledLink>
         <StyledLink to="/movies">Movies</StyledLink>
       </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MoviesDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Styled>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MoviesDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Styled>
     </div>
   );
 };
-
