@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import {
-  useParams,
-  useLocation,
-} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import css from '../Cast/Cast.module.css';
 
   const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';

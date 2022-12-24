@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
 const BASEURL_ACTOR = 'https://api.themoviedb.org/3/movie/';
@@ -7,7 +7,7 @@ const BASEURL_ACTOR = 'https://api.themoviedb.org/3/movie/';
 export const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
-  
+
   
 
 
