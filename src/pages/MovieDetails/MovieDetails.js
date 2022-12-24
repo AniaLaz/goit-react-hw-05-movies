@@ -59,23 +59,27 @@ export const MoviesDetails = () => {
       {movie && (
         <div className={css.cart}>
           <h3>{movie.title}</h3>
-          <img
-            className={css.block}
-            src={`https://www.themoviedb.org/t/p/w200${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <div className={css.block}>
-            <div className={css.title}>UseScore:</div> {movie.vote_average}
-          </div>
-          <div className={css.block}>
-            <div className={css.title}>Overviem</div>
-            <div>{movie.overview}</div>
-          </div>
-          <div>
-            <div className={css.title}>Gerres</div>
-            {movie.genres.map(({ id, name }) => (
-              <div key={id}>{`${name}`}</div>
-            ))}
+          <div className={css.info}>
+            <img
+              className={css.img}
+              src={`https://www.themoviedb.org/t/p/w200${movie.poster_path}`}
+              alt={movie.title}
+            />
+            <div>
+              <div className={css.block}>
+                <div className={css.title}>UseScore:</div> {movie.vote_average}
+              </div>
+              <div className={css.block}>
+                <div className={css.title}>Overviem</div>
+                <div>{movie.overview}</div>
+              </div>
+              <div>
+                <div className={css.title}>Gerres</div>
+                {movie.genres.map(({ id, name }) => (
+                  <div key={id}>{`${name}`}</div>
+                ))}
+              </div>
+            </div>
           </div>
           <div></div>
         </div>
