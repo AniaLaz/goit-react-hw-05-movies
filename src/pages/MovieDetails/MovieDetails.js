@@ -85,7 +85,7 @@ export const MoviesDetails = () => {
         </div>
       )}
       <div>
-        <ul>
+        <ul className={css.listMovieInfo}>
           <li>
             <Link to="cast" state={{ from: location }}>
               Cast
@@ -98,7 +98,9 @@ export const MoviesDetails = () => {
           </li>
         </ul>
       </div>
-      <Outlet />
+   
+        <Outlet />
+
     </div>
   );
 };

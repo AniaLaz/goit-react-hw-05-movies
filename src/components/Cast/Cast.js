@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import {
   useParams,
   useLocation,
-  NavLink
 } from 'react-router-dom';
+import css from '../Cast/Cast.module.css';
 
   const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
   const BASEURL_ACTOR = 'https://api.themoviedb.org/3/movie/';
@@ -40,18 +40,16 @@ export const Cast = () => {
   
   return (
     <div>
-      <button type="button">
-        <NavLink to={goBack}>close</NavLink>
-      </button>
       {actors.length > 0 ? (
         <ul>
           {actors.map(({ id, name, profile_path, character }) => (
-            <li key={id}>
+            <li key={id} className={css.list}>
               <img
+                className={css.imgAutor}
                 src={`https://www.themoviedb.org/t/p/w200${profile_path}`}
                 alt={name}
               />
-              <div>{name}</div>
+              <div className={css.actorName}>{name}</div>
               <div>Character: {character}</div>
             </li>
           ))}

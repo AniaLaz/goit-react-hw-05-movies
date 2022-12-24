@@ -1,0 +1,18 @@
+.imgAutor{
+   
+    width: 100px;
+    border-radius: 10%;
+}
+
+.actorName{
+    color: blue;
+    font-style: 20px;
+}
+
+.list{
+list-style: none;
+}
+
+.list:not(:last-child){
+    margin-top: 20px;
+}
