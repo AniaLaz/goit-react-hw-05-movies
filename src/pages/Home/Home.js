@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+
 
 export const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
 export const BASEURL_TRENDS = 'https://api.themoviedb.org/3/trending/movie/day';
