@@ -13,7 +13,7 @@ export const BASEURL_MOVIES_DETALIS = 'https://api.themoviedb.org/3/movie/';
 export const MoviesDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const [ setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
   console.log('location', location.pathname);
@@ -26,6 +26,7 @@ export const MoviesDetails = () => {
     async function fetchMoviesDetails() {
       try {
         setIsLoading(true);
+        console.log('isLoading', isLoading);
         await fetch(`${BASEURL_MOVIES_DETALIS}${movieId}?api_key=${KEY}`)
           .then(response => {
             if (!response.ok) {
@@ -36,11 +37,12 @@ export const MoviesDetails = () => {
           .then(data => {
             setMovie(data);
             console.log(data);
-                   });
+          });
       } catch {
         window.alert('щось пішло не так');
       } finally {
         setIsLoading(false);
+        console.log('isLoading', isLoading);
       }
     }
     fetchMoviesDetails();
@@ -51,7 +53,7 @@ export const MoviesDetails = () => {
   return (
     <div>
       <button type="button">
-        <NavLink to={goBack} >Go back</NavLink>
+        <NavLink to={goBack}>Go back</NavLink>
       </button>
       {movie && (
         <div>
@@ -75,7 +77,7 @@ export const MoviesDetails = () => {
         </div>
       )}
       <div>
-              <ul>
+        <ul>
           <li>
             <Link to="cast">Cast</Link>
           </li>
