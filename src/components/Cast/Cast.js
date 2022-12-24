@@ -14,7 +14,7 @@ export const Cast = () => {
 
   const { movieId } = useParams();
   const [actors, setActors] = useState([]);
-  const location = useLocation();
+
 
 
   useEffect(() => {

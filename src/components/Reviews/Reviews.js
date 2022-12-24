@@ -7,7 +7,7 @@ const BASEURL_ACTOR = 'https://api.themoviedb.org/3/movie/';
 export const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
-  const location = useLocation();
+  
   
 
 
