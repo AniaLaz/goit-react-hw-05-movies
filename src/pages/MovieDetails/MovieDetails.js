@@ -6,6 +6,7 @@ import {
   useLocation,
   NavLink,
 } from 'react-router-dom';
+import css from '../MovieDetails/MoviesDetails.module.css';
 
 export const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
 export const BASEURL_MOVIES_DETALIS = 'https://api.themoviedb.org/3/movie/';
@@ -51,24 +52,27 @@ export const MoviesDetails = () => {
   console.log('movie', movie);
 
   return (
-    <div>
+    <div className={css.contanetMoviesDetails}>
       <button type="button">
         <NavLink to={goBack}>Go back</NavLink>
       </button>
       {movie && (
-        <div>
+        <div className={css.cart}>
           <h3>{movie.title}</h3>
           <img
+            className={css.block}
             src={`https://www.themoviedb.org/t/p/w200${movie.poster_path}`}
             alt={movie.title}
           />
-          <div>UseScore: {movie.vote_average}</div>
-          <div>
-            <div>Overviem</div>
+          <div className={css.block}>
+            <div className={css.title}>UseScore:</div> {movie.vote_average}
+          </div>
+          <div className={css.block}>
+            <div className={css.title}>Overviem</div>
             <div>{movie.overview}</div>
           </div>
           <div>
-            <div>Gerres</div>
+            <div className={css.title}>Gerres</div>
             {movie.genres.map(({ id, name }) => (
               <div key={id}>{`${name}`}</div>
             ))}

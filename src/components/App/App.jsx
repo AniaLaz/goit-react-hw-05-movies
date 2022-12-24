@@ -6,10 +6,11 @@ import { MoviesDetails } from '../../pages/MovieDetails/MovieDetails';
 import { Cast } from '../Cast/Cast';
 import { Reviews } from '../Reviews/Reviews';
 import styled from 'styled-components';
-
+import css from '../App/App.module.css';
 
 const StyledLink = styled(NavLink)`
   color: black;
+  margin-right: 50px;
 
   &.active {
     color: red;
@@ -19,7 +20,7 @@ const StyledLink = styled(NavLink)`
 export const App = () => {
   return (
     <div>
-      <nav>
+      <nav className={css.nav}>
         <StyledLink to="/" end>
           Home
         </StyledLink>
