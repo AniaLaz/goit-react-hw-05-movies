@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import css from '../Home/Home.module.css';
 
 
 export const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
@@ -41,7 +42,7 @@ export const Home = () => {
         <ul>
           {movies.map(({ id, title }) => (
             <li key={id}>
-              <Link to={`movies/${id}`} state={{ from: location }}>
+              <Link to={`movies/${id}`} state={{ from: location }} className={css.link}>
                 {title}
               </Link>
             </li>

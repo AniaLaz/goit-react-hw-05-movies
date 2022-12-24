@@ -8,8 +8,8 @@ export const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const location = useLocation();
-  console.log('location', location.pathname);
-  const goBack = location.state?.from ?? '/';
+  
+
 
   useEffect(() => {
     async function fetchMoviesDetails() {
@@ -23,7 +23,7 @@ export const Reviews = () => {
           })
           .then(data => {
             setReviews(data.results);
-            console.log('data Reviews', data.results.length);
+            
           });
       } catch {
         window.alert('щось пішло не так');

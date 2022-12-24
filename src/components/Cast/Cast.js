@@ -15,7 +15,7 @@ export const Cast = () => {
   const { movieId } = useParams();
   const [actors, setActors] = useState([]);
   const location = useLocation();
-  const goBack = location.state?.from ?? '/';
+
 
   useEffect(() => {
     async function fetchMoviesDetails() {

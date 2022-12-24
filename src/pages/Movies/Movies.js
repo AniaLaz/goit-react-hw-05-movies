@@ -1,6 +1,7 @@
 import { SearchBox } from '../../components/SearchBox/SearchBox';
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
+import css from '../Movies/Movies.module.css';
 
 export const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
 export const BASEURL_Movies = 'https://api.themoviedb.org/3/search/movie';
@@ -10,7 +11,7 @@ export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParam, setSearchParam] = useSearchParams();
   const filter = searchParam.get('filter') ?? '';
-  console.log(filter);
+
 
    const location = useLocation();
 
@@ -31,7 +32,7 @@ export const Movies = () => {
             })
             .then(data => {
               setMovies(data.results);
-              console.log(data.results);
+             
             });
         } catch {
           window.alert('щось пішло не так');
@@ -68,7 +69,11 @@ export const Movies = () => {
         <ul>
           {movies.map(({ id, title }) => (
             <li key={id}>
-              <Link to={`${id}`} state={{ from: location }}>
+              <Link
+                to={`${id}`}
+                state={{ from: location }}
+                className={css.link}
+              >
                 {title}
               </Link>
             </li>

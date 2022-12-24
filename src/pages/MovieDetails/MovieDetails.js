@@ -17,11 +17,11 @@ export const MoviesDetails = () => {
   // const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
-  console.log('location', location.pathname);
+
 
   const goBack = location.state?.from ?? '/';
   // console.log(useParams());
-  console.log(movieId);
+
 
   useEffect(() => {
     async function fetchMoviesDetails() {
@@ -37,8 +37,7 @@ export const MoviesDetails = () => {
           })
           .then(data => {
             setMovie(data);
-            console.log(data);
-          });
+                   });
       } catch {
         window.alert('щось пішло не так');
       } finally {
@@ -49,8 +48,7 @@ export const MoviesDetails = () => {
     fetchMoviesDetails();
   }, [movieId]);
 
-  console.log('movie', movie);
-
+ 
   return (
     <div>
       <button type="button">
@@ -87,20 +85,19 @@ export const MoviesDetails = () => {
       <div>
         <ul className={css.listMovieInfo}>
           <li>
-            <Link to="cast" state={{ from: location }}>
+            <Link to="cast" state={{ from: location }} className={css.link}>
               Cast
             </Link>
           </li>
           <li>
-            <Link to="reviews" state={{ from: location }}>
+            <Link to="reviews" state={{ from: location }} className={css.link}>
               Reviews
             </Link>
           </li>
         </ul>
       </div>
-   
-        <Outlet />
 
+      <Outlet />
     </div>
   );
 };
