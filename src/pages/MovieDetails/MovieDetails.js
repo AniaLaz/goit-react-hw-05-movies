@@ -25,8 +25,8 @@ export const MoviesDetails = () => {
   useEffect(() => {
     async function fetchMoviesDetails() {
       try {
-        setIsLoading(true);
-        console.log('isLoading', isLoading);
+        // setIsLoading(true);
+        // console.log('isLoading', isLoading);
         await fetch(`${BASEURL_MOVIES_DETALIS}${movieId}?api_key=${KEY}`)
           .then(response => {
             if (!response.ok) {
@@ -41,8 +41,8 @@ export const MoviesDetails = () => {
       } catch {
         window.alert('щось пішло не так');
       } finally {
-        setIsLoading(false);
-        console.log('isLoading', isLoading);
+        // setIsLoading(false);
+        // console.log('isLoading', isLoading);
       }
     }
     fetchMoviesDetails();
