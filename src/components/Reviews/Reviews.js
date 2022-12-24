@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, NavLink } from 'react-router-dom';
 
 const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
 const BASEURL_ACTOR = 'https://api.themoviedb.org/3/movie/';
@@ -33,6 +33,9 @@ export const Reviews = () => {
   }, [movieId]);
   return (
     <div>
+      <button type="button">
+        <NavLink to={goBack}>close</NavLink>
+      </button>
       {reviews.length > 0 ? (
         <ul>
           {reviews.map(({ author, content }) => (
@@ -42,7 +45,9 @@ export const Reviews = () => {
             </li>
           ))}
         </ul>
-      ):<div>not info</div>}
+      ) : (
+        <div>not info</div>
+      )}
     </div>
   );
 };

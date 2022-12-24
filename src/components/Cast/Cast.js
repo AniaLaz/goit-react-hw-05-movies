@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import {
   useParams,
   useLocation,
+  NavLink
 } from 'react-router-dom';
 
   const KEY = '5b1449ced393d87bc0a1ea0f9fb4bc3e';
@@ -39,7 +40,10 @@ export const Cast = () => {
   
   return (
     <div>
-      {actors && (
+      <button type="button">
+        <NavLink to={goBack}>close</NavLink>
+      </button>
+      {actors.length > 0 ? (
         <ul>
           {actors.map(({ id, name, profile_path, character }) => (
             <li key={id}>
@@ -52,6 +56,8 @@ export const Cast = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <div>not info</div>
       )}
     </div>
   );
