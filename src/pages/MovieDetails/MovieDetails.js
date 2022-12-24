@@ -13,7 +13,7 @@ export const BASEURL_MOVIES_DETALIS = 'https://api.themoviedb.org/3/movie/';
 export const MoviesDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
   console.log('location', location.pathname);
