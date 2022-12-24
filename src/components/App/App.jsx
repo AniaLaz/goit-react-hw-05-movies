@@ -2,9 +2,11 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import { Home } from '../../pages/Home/Home';
 import { Movies } from '../../pages/Movies/Movies';
 import { NotFound } from '../../pages/NotFound/NotFound';
+import { MoviesDetails } from '../../pages/MovieDetails/MovieDetails';
+import { Cast } from '../Cast/Cast';
+import { Reviews } from '../Reviews/Reviews';
 import styled from 'styled-components';
 
-console.log('styled',styled);
 
 const StyledLink = styled(NavLink)`
   color: black;
@@ -27,36 +29,13 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MoviesDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { Movies } from '../../pages/Movies';
-// import { MoviesDetails } from '../../pages/MovieDetails';
-
-// import { fetchFilmsTrends } from '../Fetch/Fetch';
-
-// console.log(fetchFilmsTrends);
-// const page = 1;
-
-// export function GetTrendsFilms() {
-//   fetchFilmsTrends(page).then(data => {
-//     console.log(data.results[0].title);
-//   });
-// }
-// GetTrendsFilms();
